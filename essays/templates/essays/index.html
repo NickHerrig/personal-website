@@ -1,0 +1,15 @@
+{% extends 'essays/base.html' %}
+
+{% block content %}
+
+  {% if latest_essays_list %}
+    <ul>
+    {% for essay in latest_essays_list %}
+      <li><a href="/essays/{{ essay.slug }}/">{{ essay.title }}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>Essays are coming soon!</p>
+  {% endif %}
+
+{% endblock %}
