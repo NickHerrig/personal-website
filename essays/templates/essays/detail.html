@@ -1,7 +1,38 @@
 {% extends 'essays/base.html' %}
 
 {% block content %}
+{% load markdownify %}
 
-<h1>{{ essay.title }}</h1>
+<section class="section">
+  <div class="container">
+
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+
+            <h1 class="title">{{ essay.title }}</h1>
+
+            <div class="content">
+              <ol type="1">
+                {{ essay.content|markdownify }}
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Nickherrig.com</strong> by <a href="https://www.linkedin.com/in/nickherrig/">Nick Herrig</a>.
+    </p>
+  </div>
+</footer>
 
 {% endblock %}

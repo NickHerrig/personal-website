@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'markdownify',
     'pages.apps.PagesConfig',
     'essays.apps.EssaysConfig',
     'django.contrib.admin',

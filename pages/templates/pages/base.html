@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,15 +10,22 @@
   </head>
   <body>
 
-    <nav class="navbar is-primary">
+    <nav class="navbar is-info has-shadow">
 
       <div class="navbar-brand">
         <a class="navbar-item" href="https://nickherrig.com">
-          <img src="static/pages/images/navbar-logo.png" width="150" height="100">
+          <img src="{% static "essays/navbar-logo.png" %}" width="150" height="100">
         </a>
+
+        <a class="navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+
       </div>
 
-      <div class="navbar-menu">
+      <div class="navbar-menu is-active">
 
         <div class="navbar-start">
           <a class="navbar-item" href="https://nickherrig.com">
@@ -50,6 +58,9 @@
       </div>
 
     </nav>
+
+    {% block content %}
+    {% endblock %}
 
   </body>
 </html>
