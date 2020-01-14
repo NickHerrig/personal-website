@@ -1,7 +1,7 @@
 {% extends 'essays/base.html' %}
 
 {% block content %}
-{% load markdownify %}
+{% load markdown_filter %}
 
 <section class="section">
   <div class="container">
@@ -15,7 +15,7 @@
 
             <div class="content">
               <ol type="1">
-                {{ essay.content|markdownify }}
+                {{ essay.content|markdown_filter|safe }}
               </ol>
             </div>
 
